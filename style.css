@@ -160,3 +160,41 @@ main.content img {
   border: 1px solid #ccc; /* dünner Rahmen (optional) */
   box-shadow: 2px 2px 8px rgba(0,0,0,0.2); /* Schatten (optional) */
 }
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;       /* verhindert unschöne Lücken unter Bildern */
+  object-fit: cover;    /* sorgt für sauberes Zuschneiden */
+  border-radius: 8px;   /* abgerundete Ecken, optional */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* dezenter Schatten */
+}
+
+
+.content img {
+  display: block;
+  width: 600px;     /* feste Breite */
+  max-width: 100%;  /* skaliert auf Handy */
+  height: auto;     /* proportional */
+  margin: 20px auto;
+}
+/* Galerie-Bilder */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.gallery img {
+  width: 100%;
+  height: 220px;       /* gleiche Höhe für alle Bilder */
+  object-fit: cover;   /* schneidet sauber zu statt zu verzerren */
+  border-radius: 12px; /* abgerundete Ecken */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* leichter Schatten */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05); /* Zoom-Effekt beim Hover */
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+}
